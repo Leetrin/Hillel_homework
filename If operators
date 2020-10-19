@@ -1,0 +1,31 @@
+const isUserWantsDog = confirm("Хотите собачку?");
+let bigDog;
+let veryBigDog;
+
+if (isUserWantsDog) {
+  bigDog = confirm("Большую?");
+}
+
+if (bigDog) {
+  veryBigDog = confirm("Очень большую?");
+}
+
+function getMessage() {
+  if (!isUserWantsDog) {
+    return ":(";
+  } else if (!bigDog) {
+    return "Держи чихуахуа";
+  } else if (veryBigDog) {
+    return "Вот ваша овчарка";
+  } else {
+    return"Спаниель сойдет?";
+  }
+}
+alert(getMessage());
+
+
+
+
+
+
+
