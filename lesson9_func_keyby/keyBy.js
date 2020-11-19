@@ -16,4 +16,4 @@ function keyBy(arr, key) {
     }, {});
 }
 
-console.log(keyBy(arr, "name"));
+console.log(keyBy(arr, "surname"));
