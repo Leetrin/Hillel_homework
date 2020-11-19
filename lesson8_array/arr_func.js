@@ -1,16 +1,24 @@
 const numArr1 = [1, 3, 5, 7, 9, 11];
-let numArr1Sum = 0;
-
-for (let i = 0; i < numArr1.length; i++) {
-  numArr1Sum = numArr1Sum + numArr1[i];
+function sumArr(arr) {
+    let numArr1Sum = 0;
+    for (let i = 0; i < arr.length; i++) {
+      numArr1Sum = numArr1Sum + arr[i];
+    }
+  return numArr1Sum;
 }
+sumArr(numArr1);
+
 
 
 
 
 const numArr2 = [1, 3, 5, 7, 9, 11];
 
-const numArr2Sum = numArr2.reduce((accumulator, currentValue) => (accumulator + currentValue), 0);
+function numArr2Sum(arr) {
+  return arr.reduce((accumulator, currentValue) => (accumulator + currentValue), 0);
+}
+numArr2Sum(numArr2);
+
 
 
 
