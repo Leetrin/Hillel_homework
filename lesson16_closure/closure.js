@@ -17,29 +17,26 @@ const createRangeFilter = (min, max) => num => num >= min && num <= max;
 
 function createKeyBy(propName) {
   return function keyBy(arr) {
-    return arr.filter(obj => obj[propName]);
+    return arr.reduce((result, elem) => {
+      if (!result[elem[propName]]) {
+        result[elem[propName]] = [];
+      }
+
+      result[elem[propName]].push(elem);
+
+      return result;
+    }, {});
   }
 }
 
 const arr = [
-  {
-    a: 1,
-    b: 2,
-    c: 3
-  },
-  {
-    b: 2,
-    c: 3
-  },
-  {
-    a: 1,
-    b: 2,
-  },
-];
+  {name: 'Vasya', surname: 'Ivanov'},
+  {name: 'Vanya', surname: 'Ivanov'},
+  {name: 'Albert', surname: 'Vasyliev'},
+]
 
-createKeyBy('a')(arr);
+createKeyBy('surname')(arr);
 
-const createKeyBy = propName => arr => arr.filter(obj => obj[propName]);
 
 
 
@@ -58,4 +55,3 @@ createCalcPercent(30)(100);
 
 
 const createCalcPercent = percent => value => value / 100 * percent;
-
