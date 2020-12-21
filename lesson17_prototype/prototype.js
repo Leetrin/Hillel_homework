@@ -10,21 +10,21 @@ String.prototype.reverse = function () {
 
 
 
+
+
+Array.prototype.oldSort = Array.prototype.sort;
+
 Array.prototype.sort = function () {
-    const arrCopy = [...this]
-    const newArr = [];
-    for (; arrCopy.length;) {
-        newArr.push(arrCopy.splice(arrCopy.indexOf(Math.min(...arrCopy)), 1)[0])
-    }
-    return newArr;
-}
+  const newArr = [...this];
+
+  return newArr.oldSort();
+};
 
 const a = [4, 3, 2, 1];
-const b = a.sort();
+const b = a.sort((a, b) => a - b);
 
-console.log(b);
 console.log(a);
-
+console.log(b);
 
 
 
