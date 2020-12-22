@@ -14,17 +14,14 @@ String.prototype.reverse = function () {
 
 Array.prototype.oldSort = Array.prototype.sort;
 
-Array.prototype.sort = function () {
+Array.prototype.sort = function (callback) {
   const newArr = [...this];
-
-  return newArr.oldSort();
+  return newArr.oldSort(callback);
 };
 
 const a = [4, 3, 2, 1];
 const b = a.sort((a, b) => a - b);
 
-console.log(a);
-console.log(b);
 
 
 
